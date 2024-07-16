@@ -205,26 +205,7 @@ pre button {
           <div style="background-color: transparent;" id="chat4">
             <div id="scroll" class="card-body my-3" data-mdb-perfect-scrollbar="true"
               style="position: relative; height: 66vh">
-              {% if chats %}
-            {% for chat in chats %}
-            <div id="chatCard">
-                <div  class="d-flex flex-row justify-content-end mb-3">
-                    <div>
-                        <div style="background-color: #1b1b1b8e; font-size: smaller; border-radius: 20px 0px 20px 20px;" class="small p-2 me-2 mb-1 text-white ms-auto">{{ chat.text_input }}</div>
-                    </div>
-                    <img class="rounded-circle mb-1" src="https://espere.in/static/images/profile.webp"
-                         alt="avatar 1" style="width: 40px; height: 100%;">
-                </div>
-                <div id="response_data" class="d-flex flex-row justify-content-start mb-3">
-                    <img src="https://espere.in/static/images/newlogo.png"
-                         alt="avatar 1" style="width:  40px; height: 100%;">
-                    <div>
-                        <div id="chatArea" class="small p-2 ms-2 mb-1 me-auto text-dark" style="background-color: #ffffffb8; font-size: smaller; border-radius: 0px 20px 20px 20px;">{{ chat.gemini_output | safe }}</div>
-                    </div>
-                </div>
-              </div>
-            {% endfor %}
-              {% endif %}
+
             </div>
             <div class="loader-container">
               <div style="color: #242424b1;" class="d-flex align-items-center me-3" id="loading">
@@ -233,7 +214,7 @@ pre button {
             <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
               <img class="rounded-circle" src="{% static "user.png" %}"
                 alt="avatar 3" style="width: 40px; height: 100%;">
-                <form class="form" onsubmit="askQuestion(event)">
+                <form class="form">
                     <input class="form-control ms-2" type="text" id="userText" name="text" placeholder="Ask your question">
                 </form>                
               <span id="submitBtn" style="background-color: rgba(253, 253, 253, 0.532); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(5px)" type="submit" class="ms-3 link-danger btn btn-floating" href=""><i class="fas fa-paper-plane"></i></span>
