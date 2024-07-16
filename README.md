@@ -68,27 +68,7 @@ Ensure you have the following installed:
    The project will be accessible at `http://127.0.0.1:8000`.
 
 
-## Deployment
 
-For deployment, follow these steps:
-
-1. **Collect static files:**
-
-   ```bash
-   python manage.py collectstatic
-   ```
-
-2. **Configure your web server:**
-
-   Set up your web server (e.g., Nginx, Apache) and application server (e.g., Gunicorn, uWSGI) to serve the Django application.
-
-3. **Configure your database:**
-
-   Ensure your database is configured for production use (e.g., using a managed database service).
-
-4. **Environment variables:**
-
-   Ensure all necessary environment variables are set for your production environment.
 
 ## Contributing
 
