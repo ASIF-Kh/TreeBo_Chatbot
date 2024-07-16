@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 # Create your views here.
 # add here to your generated API key
-genai.configure(api_key="Input the Key")
+genai.configure(api_key="AIzaSyDrefuYMMd23jgptIbmyu7ZbdggrREDfWI")
 
 generation_config = {
   "temperature": 1,
@@ -18,6 +18,7 @@ generation_config = {
 def ask_question(request):
     if request.method == "POST":
         text = request.POST.get("text")
+        print(text)
 
 
 
