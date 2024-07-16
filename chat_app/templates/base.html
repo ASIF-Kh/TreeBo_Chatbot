@@ -256,6 +256,11 @@ pre button {
     let chatCard = document.querySelector('#scroll');
     chatCard.scrollTop = chatCard.scrollHeight;
 
+    document.querySelector('form').addEventListener('submit',(e)=> {
+        e.preventDefault()
+        chat_ajax()
+    })
+
     document.addEventListener('DOMContentLoaded', function(){
         document.querySelector('#submitBtn').addEventListener('click', () => chat_ajax());
     });
@@ -276,6 +281,7 @@ pre button {
         let text = document.querySelector('#userText').value;
         let html = md.renderInline(text);
         let chatCard = document.querySelector('#scroll');
+        
         
         // Append user's message to chat card
         chatCard.innerHTML += `
