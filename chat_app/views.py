@@ -16,12 +16,9 @@ generation_config = {
 }
 
 def ask_question(request):
+    print("in qestion")
     if request.method == "POST":
         text = request.POST.get("text")
-        print(text)
-
-
-
         model = genai.GenerativeModel(
         model_name="gemini-1.5-flash",
         generation_config=generation_config,
@@ -50,11 +47,11 @@ def ask_question(request):
         response = chat_session.send_message(text)
 
  
- 
         response_data = {
             "text": response.text,  # Assuming response.text contains the relevant response data
             # Add other relevant data from response if needed
         }
+        print("in last")
         return JsonResponse({"data": response_data})
     else:
         return HttpResponseRedirect(

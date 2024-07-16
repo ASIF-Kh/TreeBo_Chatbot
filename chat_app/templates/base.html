@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,12 +28,12 @@ rel="stylesheet"
 
 <style>
 body {
-    background-image: url("https://espere.in/static/images/chat.png");
+    background-image: url("/static/bg.jpg");
     background-position: center center;
 	background-repeat:  no-repeat;
 	background-attachment: fixed;
 	background-size:  cover;
-    background-color: rgba(161, 161, 161, 0.108);
+
   }
 
 
@@ -195,7 +196,7 @@ pre button {
         <div style="background-color: rgba(161, 161, 161, 0.108); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(5px); border-radius: 5px 5px 0px 0px;" class="modal-header text-white shadow-5">
           <div class="my-3">
             <a class="text-dark" href="javascript:history.back()"><i type="button" data-mdb-dismiss="modal" style="font-size: 18px;" class="fas fa-arrow-left"></i></a>
-            <img class="ms-2" src="https://espere.in/static/images/newlogo.png" alt="Header Image" style="border-radius: 50%; max-height: 35px; max-width: 50px;">
+            <img class="ms-2" src="{% static "ChatBot.png" %}" alt="Header Image" style="border-radius: 50%; max-height: 35px; max-width: 50px;">
             <span class="ms-1 text-dark">ChatBot</span>
           </div>
           <a data-mdb-placement="bottom" data-mdb-toggle="tooltip" title="Reload" class="text-dark" href="{% url 'chat' %}"><i type="button" data-mdb-dismiss="modal" style="font-size: 18px;" class="fas fa-arrows-rotate"></i></a>
@@ -230,7 +231,7 @@ pre button {
               </div>
             </div>
             <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
-              <img class="rounded-circle" src="https://espere.in/static/images/profile.webp"
+              <img class="rounded-circle" src="{% static "user.png" %}"
                 alt="avatar 3" style="width: 40px; height: 100%;">
                 <form class="form" onsubmit="askQuestion(event)">
                     <input class="form-control ms-2" type="text" id="userText" name="text" placeholder="Ask your question">
@@ -289,7 +290,7 @@ pre button {
                 <div>
                     <div style="background-color: #1b1b1b8e; font-size: smaller; border-radius: 20px 0px 20px 20px;" class="small p-2 me-2 mb-1 text-white ms-auto">${text}</div>
                 </div>
-                <img class="rounded-circle mb-1" src="https://espere.in/static/images/profile.webp" alt="avatar 1" style="width: 40px; height: 100%;">
+                <img class="rounded-circle mb-1" src="{% static "user.png" %}" alt="avatar 1" style="width: 40px; height: 100%;">
             </div>
         `;
         chatCard.scrollTop = chatCard.scrollHeight;
@@ -323,7 +324,7 @@ pre button {
               
               // Create avatar image
               var avatarImg = document.createElement('img');
-              avatarImg.src = "https://espere.in/static/images/newlogo.png";
+              avatarImg.src = "{% static "chatbot.png" %}";
               avatarImg.alt = "avatar 1";
               avatarImg.style.width = '40px';
               avatarImg.style.height = '100%';
