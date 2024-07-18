@@ -278,6 +278,7 @@ code {
 
     document.addEventListener('DOMContentLoaded', function(){
         document.querySelector('#submitBtn').addEventListener('click', () => {
+            let input = document.querySelector('#userText').value
             if(input){
                 chat_ajax()}
         });
