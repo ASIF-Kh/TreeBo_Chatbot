@@ -7,22 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatBot</title>
     <!-- Font Awesome -->
-<link
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
-rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
 </head>
 <body>
 
@@ -30,12 +21,12 @@ rel="stylesheet"
 body {
     background-image: url("/static/bg.jpg");
     background-position: center center;
-	background-repeat:  no-repeat;
-	background-attachment: fixed;
-	background-size:  cover;
-
-  }
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
 
 #chat4 .form-control {
     border-color: transparent;
@@ -53,15 +44,20 @@ body {
     height: 1px;
     background: #eee;
 }
+
 #scroll::-webkit-scrollbar{
-    background-color: rgba(0, 0, 0, 0.108); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.108); 
+    -webkit-backdrop-filter: blur(8px); 
+    backdrop-filter: blur(5px);
     width: 0px;
     height: 0px;
     color: #eee;
 }
 
 pre::-webkit-scrollbar{
-    background-color: rgba(0, 0, 0, 0.108); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.108); 
+    -webkit-backdrop-filter: blur(8px); 
+    backdrop-filter: blur(5px);
     width: 0px;
     height: 0px;
 }
@@ -71,9 +67,9 @@ div {
 }
 
 pre {
-     overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-x: scroll; /* Enable horizontal scrolling */
     width: 68vw;
-  /* white-space: pre-wrap; Preserve line breaks */
+    /* white-space: pre-wrap; Preserve line breaks */
 }
 
 pre button {
@@ -87,10 +83,11 @@ pre button {
     border: none;
 }
 
-.form{
+.form {
     width: 100%;
 }
-#questionInput{
+
+#questionInput {
     background-color: rgba(253, 253, 253, 0.532); 
     -webkit-backdrop-filter: blur(8px); 
     backdrop-filter: blur(5px);
@@ -117,76 +114,111 @@ pre button {
     border-style: solid;
     border-color: transparent transparent rgb(100, 100, 100) transparent;
 }
+
 #scroll {
-        margin: 4px, 4px;
-        padding: 4px;
-        width: 100%;
-        height: 57.0vh;
-        overflow-x: auto;
-        /* overflow-y: auto; */
-        text-align: justify;
-        /* border: 1px solid rgb(14, 119, 163); */
-        border-radius: 3px;
-    }
-    #scroll::-webkit-scrollbar {
+    margin: 4px, 4px;
+    padding: 4px;
+    width: 100%;
+    height: 57.0vh;
+    overflow-x: auto;
+    /* overflow-y: auto; */
+    text-align: justify;
+    /* border: 1px solid rgb(14, 119, 163); */
+    border-radius: 3px;
+}
+
+#scroll::-webkit-scrollbar {
     width: 5px;
     height: 0px;
-    }
+}
 
-    /* Track */
-    #scroll::-webkit-scrollbar-track {
+/* Track */
+#scroll::-webkit-scrollbar-track {
     box-shadow: inset 0 0 7px rgb(219, 219, 219);
     border-radius: 10px;
-    }
+}
 
-    /* Handle */
-    #scroll::-webkit-scrollbar-track {
+/* Handle */
+#scroll::-webkit-scrollbar-track {
     box-shadow: inset 0 0 7px rgb(255, 255, 255); 
     border-radius: 10px;
-    }
+}
 
-    /* Handle */
-    #scroll::-webkit-scrollbar-thumb {
+/* Handle */
+#scroll::-webkit-scrollbar-thumb {
     background: rgb(215, 215, 215); 
     border-radius: 10px;
-    }
+}
 
-    /* Handle on hover */
-    #scroll::-webkit-scrollbar-thumb:hover {
+/* Handle on hover */
+#scroll::-webkit-scrollbar-thumb:hover {
     background: rgb(159, 159, 159); 
-    }
-    pre {
-            /* background-color: #dcdcdc; */
-            padding: 1em;
-            width: 100%;
-            overflow-x: auto;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
+}
 
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-        }
-        .loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
+pre {
+    /* background-color: #dcdcdc; */
+    padding: 1em;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
 .loader {
-  width: 120px;
-  height: 20px;
-  -webkit-mask: linear-gradient(90deg,#000 70%,#0000 0) left/20% 100%;
-  background:
-   linear-gradient(#000 0 0) left -25% top 0 /20% 100% no-repeat
-   rgb(226, 229, 205);
-  animation: l7 1s infinite steps(6);
+    width: 120px;
+    height: 20px;
+    -webkit-mask: linear-gradient(90deg,#000 70%,#0000 0) left/20% 100%;
+    background:
+    linear-gradient(#000 0 0) left -25% top 0 /20% 100% no-repeat
+    rgb(226, 229, 205);
+    animation: l7 1s infinite steps(6);
 }
+
 @keyframes l7 {
     100% {background-position: right -25% top 0}
-}00% {background-position: 0 0}
+    0% {background-position: 0 0}
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-floating {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.btn-floating:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 </style>
   
@@ -214,10 +246,12 @@ pre button {
             <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
               <img class="rounded-circle" src="{% static "user.png" %}"
                 alt="avatar 3" style="width: 40px; height: 100%;">
-                <form class="form">
+                <form class="form d-flex align-items-center">
                     <input class="form-control ms-2" type="text" id="userText" name="text" placeholder="Ask your question">
+                    <span id="submitBtn" class="ms-2 btn btn-floating"><i class="fas fa-paper-plane"></i></span>
                 </form>                
-              <span id="submitBtn" style="background-color: rgba(253, 253, 253, 0.532); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(5px)" type="submit" class="ms-3 link-danger btn btn-floating" href=""><i class="fas fa-paper-plane"></i></span>
+                <button id="gamesButton" class="btn btn-success ms-2">Games</button>
+                <button id="factsButton" class="btn btn-info ms-2">Facts</button>
             </div>
           </div>
         </div>
@@ -226,10 +260,7 @@ pre button {
 </div>
 
 <!-- MDB -->
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
-></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
@@ -239,12 +270,23 @@ pre button {
     chatCard.scrollTop = chatCard.scrollHeight;
 
     document.querySelector('form').addEventListener('submit',(e)=> {
+        let input = document.querySelector('#userText').value
         e.preventDefault()
-        chat_ajax()
+        if(input){
+        chat_ajax()}
     })
 
     document.addEventListener('DOMContentLoaded', function(){
-        document.querySelector('#submitBtn').addEventListener('click', () => chat_ajax());
+        document.querySelector('#submitBtn').addEventListener('click', () => {
+            if(input){
+                chat_ajax()}
+        });
+        document.querySelector('#gamesButton').addEventListener('click', () => {
+            chat_ajax("Tell me about sustainable development games");
+        });
+        document.querySelector('#factsButton').addEventListener('click', () => {
+            chat_ajax("Tell me a fact about sustainable development");
+        });
     });
 
     function myFunction() {
@@ -257,13 +299,11 @@ pre button {
     document.querySelector('#userText').setAttribute('placeholder', 'Ask your question');
 }
 
-
-    function chat_ajax() {
+    function chat_ajax(message = null) {
         const md = new markdownit({ html: true });
-        let text = document.querySelector('#userText').value;
+        let text = message ? message : document.querySelector('#userText').value;
         let html = md.renderInline(text);
         let chatCard = document.querySelector('#scroll');
-        
         
         // Append user's message to chat card
         chatCard.innerHTML += `
@@ -277,7 +317,9 @@ pre button {
         chatCard.scrollTop = chatCard.scrollHeight;
         console.log(text);
 
-        document.querySelector('#userText').value = null;
+        if (!message) {
+            document.querySelector('#userText').value = null;
+        }
 
         var loading = document.querySelector('#loading');
         myFunction();
@@ -286,6 +328,7 @@ pre button {
             </div>
         `;
         chatCard.scrollTop = chatCard.scrollHeight;
+
         $.ajax({
             type: 'POST',
             url: '/ask_question/',
@@ -324,9 +367,7 @@ pre button {
               loading.innerHTML = '';
               chatCard.scrollTop = chatCard.scrollHeight;
               enableUserText();
-
           },
-
 
             error: function() {
                 console.log("There was an error!");
