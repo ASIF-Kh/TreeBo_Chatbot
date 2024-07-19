@@ -15,20 +15,7 @@ generation_config = {
   "response_mime_type": "text/plain",
 }
 
-def ask_question(request):
-    print("in qestion")
-    if request.method == "POST":
-        text = request.POST.get("text")
-        model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        generation_config=generation_config,
-        # safety_settings = Adjust safety settings
-        # See https://ai.google.dev/gemini-api/docs/safety-settings
-        system_instruction="You are a ChatBot named TreeBo, You are like a teacher, explain everything as simple and interesting as possible, Your specialization is Sustainable Development Goals and Sustainable Development, answer only the questions related to these. If an unrelated question will ask, refused politely.",
-        )
-
-        chat_session = model.start_chat(
-        history=[
+sessionHistory = [
             {
             "role": "user",
             "parts": [
@@ -66,6 +53,21 @@ def ask_question(request):
             ],
             },
         ]
+
+def ask_question(request):
+    print("in qestion")
+    if request.method == "POST":
+        text = request.POST.get("text")
+        model = genai.GenerativeModel(
+        model_name="gemini-1.5-flash",
+        generation_config=generation_config,
+        # safety_settings = Adjust safety settings
+        # See https://ai.google.dev/gemini-api/docs/safety-settings
+        system_instruction="You are a ChatBot named TreeBo, You are like a teacher, explain everything as simple and interesting as possible, Your specialization is Sustainable Development Goals and Sustainable Development, answer only the questions related to these. If an unrelated question will ask, refused politely.",
+        )
+
+        chat_session = model.start_chat(
+        history=sessionHistory
         )
 
         response = chat_session.send_message(text,stream=True)
@@ -81,7 +83,14 @@ def ask_question(request):
             "text": output,  # Assuming response.text contains the relevant response data
             # Add other relevant data from response if needed
         }
-        print("in last")
+        
+        contextUser={"role":"user",
+                 "parts":[text]}
+        contextBot={"role":"model",
+                    "parts":[output]}
+        sessionHistory.append(contextUser)
+        sessionHistory.append(contextBot)
+
         return JsonResponse({"data": response_data})
     else:
         return HttpResponseRedirect(
