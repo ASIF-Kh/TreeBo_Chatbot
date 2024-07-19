@@ -2,10 +2,13 @@ from django.shortcuts import render, reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 import google.generativeai as genai
-
+import os
+from dotenv import load_dotenv
+import os
+load_dotenv()
 # Create your views here.
 # add here to your generated API key
-genai.configure(api_key="AIzaSyDrefuYMMd23jgptIbmyu7ZbdggrREDfWI")
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
 generation_config = {
   "temperature": 1,
